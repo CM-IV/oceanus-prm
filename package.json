@@ -1,0 +1,29 @@
+{
+  "name": "@example/basics",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "prod": "HOST=0.0.0.0 PORT=5080 node ./dist/server/entry.mjs"
+  },
+  "dependencies": {
+    "@astrojs/node": "^4.0.0",
+    "@astrojs/preact": "^1.2.0",
+    "@lucia-auth/adapter-prisma": "^0.1.4",
+    "@lucia-auth/astro": "^0.4.0",
+    "@prisma/client": "^4.8.0",
+    "astro": "^1.8.0",
+    "lucia-auth": "^0.3.4",
+    "preact": "^10.11.3",
+    "zod": "^3.20.2"
+  },
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^5.0.0",
+    "postcss": "^8.4.20",
+    "prisma": "^4.8.0"
+  }
+}

@@ -1,0 +1,18 @@
+version: "3.7"
+services:
+  client:
+    environment:
+      - NODE_ENV=production
+      - PORT=5080
+      - DATABASE_URL=file:../db/data.sqlite
+    image: solonsscale/fast-dash:latest #Change this
+    working_dir: /app
+    stdin_open: true
+    ports:
+      - "5080:5080"
+    restart: unless-stopped
+    volumes:
+      - prm_data:/app
+
+volumes:
+  data:

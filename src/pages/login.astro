@@ -1,0 +1,56 @@
+---
+import AuthLayout from "@layouts/AuthLayout.astro";
+import { auth } from "@prisma/init";
+import { AuthRequest } from "@lucia-auth/astro";
+import Signin from "@components/signin.astro";
+import { handleAuthLogin } from "@utils/validator";
+
+const authRequest = new AuthRequest(auth, Astro);
+
+//Check if user already has a valid session
+const session = await authRequest.validate();
+if (session) {
+    return Astro.redirect("/", 302);
+}
+
+//Handle login form
+if (Astro.request.method === "POST") {
+    try {
+        const form = Object.fromEntries(await Astro.request.formData());
+        const result = await handleAuthLogin(form);
+
+        if (!result.success) {
+            throw new Error();
+        }
+
+        const user = await auth.authenticateUser("username", result.data.username, result.data.password);
+
+        const session = await auth.createSession(user.userId);
+        
+        authRequest.setSession(session);
+
+        return Astro.redirect("/", 302);
+
+    } catch (error) {
+        Astro.response.status = 400;
+    }
+}
+---
+
+<AuthLayout title="Login">
+    <div class="columns is-centered">
+        <div class="column is-half">
+            <main>
+                {Astro.response.status == 400 ? (
+                    <section class="section">
+                        <div id="loginNotify" class="notification is-danger">
+                            <button onclick="this.parentNode.style.display='none'" class="delete"></button>
+                            Your login credentials are incorrect.
+                        </div>
+                    </section>
+                ) : (null)}
+                <Signin />
+            </main>
+        </div>
+    </div>
+</AuthLayout>
