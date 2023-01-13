@@ -1,0 +1,12 @@
+---
+import { EditContact } from "@src/components/preact/editContact";
+import Layout from "@src/layouts/Layout.astro";
+
+const id = Astro.params.id;
+---
+
+<Layout title="Oceanus PRM">
+	<main>
+		<EditContact data={id} client:load />
+	</main>
+</Layout>

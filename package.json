@@ -5,10 +5,12 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
+    "migrate": "pnpx prisma generate && pnpx prisma migrate deploy",
+    "prod:migrate": "pnpm run migrate && pnpm run prod",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "prod": "HOST=0.0.0.0 PORT=5080 node ./dist/server/entry.mjs"
+    "prod": "HOST=0.0.0.0 PORT=5082 node ./dist/server/entry.mjs"
   },
   "dependencies": {
     "@astrojs/node": "^4.0.0",
@@ -16,7 +18,8 @@
     "@lucia-auth/adapter-prisma": "^0.1.4",
     "@lucia-auth/astro": "^0.4.0",
     "@prisma/client": "^4.8.0",
-    "astro": "^1.8.0",
+    "astro": "^1.9.2",
+    "fuse.js": "^6.6.2",
     "lucia-auth": "^0.3.4",
     "preact": "^10.11.3",
     "zod": "^3.20.2"

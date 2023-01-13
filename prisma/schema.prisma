@@ -11,14 +11,13 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
 model User {
-  id              String    @id @unique @default(cuid())
+  id              String    @id @default(cuid())
   username        String    @unique
   provider_id     String    @unique
   hashed_password String?
   session         Session[]
-  contact         Contact[]
+  contacts        Contact[]
 
   @@map("user")
 }
@@ -35,15 +34,15 @@ model Session {
 }
 
 model Contact {
-  id              String    @id @unique @default(cuid())
+  id              String    @id @default(cuid())
   user_id         String
   name            String
-  date_of_birth   String
-  workplace       String
-  phone           String
-  email           String
-  notes           String
-  thumbnail       String
+  date_of_birth   String?
+  workplace       String?
+  phone           String?
+  email           String?
+  notes           String?
+  thumbnail       String?
   user            User      @relation(references: [id], fields: [user_id], onDelete: Cascade)
 
   @@index([user_id])

@@ -10,7 +10,7 @@ export default defineConfig({
         mode: 'standalone'
     }),
     server: {
-        port: 5080,
+        port: 5081,
         host: "0.0.0.0",
     },
 });

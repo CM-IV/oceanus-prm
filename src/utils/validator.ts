@@ -40,7 +40,3 @@ export async function handleAuthLogin(rawData: unknown) {
     return result;
 }
 //Login Forms
-
-//Contact CRUD Forms
-//TODO
-//Contact CRUD Forms

@@ -2,7 +2,7 @@
 import Layout from '@layouts/Layout.astro';
 import { auth } from "@prisma/init";
 import { AuthRequest } from "@lucia-auth/astro";
-import Dashboard from '@src/components/dashComponent.astro';
+import { GetContacts } from '@src/components/preact/getContacts';
 
 const authRequest = new AuthRequest(auth, Astro);
 const { user } = await authRequest.validateUser();
@@ -15,6 +15,6 @@ if (!user) {
 
 <Layout title="Oceanus PRM">
 	<main>
-		<Dashboard />
+		<GetContacts client:load />
 	</main>
 </Layout>
