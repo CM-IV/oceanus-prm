@@ -1,7 +1,7 @@
 import { useEffect, useState } from "preact/hooks";
 import Fuse from "fuse.js";
 
-const GetContacts = () => {
+const GetContacts = ({ data }: any) => {
     const [contactData, setContactData] = useState<Contact[]>([]);
     const [searchData, setSearchData] = useState<Contact[]>([]);
     const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -17,8 +17,10 @@ const GetContacts = () => {
 
             const contacts = await allContacts.json();
 
-            setContactData(contacts);
-            setSearchData(contacts);
+            const filteredContacts = contacts.filter((c: Contact) => c.user_id === data);
+
+            setContactData(filteredContacts);
+            setSearchData(filteredContacts);
         } catch (error) {
             console.log(error);
         } finally {

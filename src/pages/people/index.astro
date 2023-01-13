@@ -11,10 +11,12 @@ if (!user) {
 	return Astro.redirect("/login", 302);
 }
 
+const id = user.userId;
+
 ---
 
 <Layout title="Oceanus PRM">
 	<main>
-		<GetContacts client:load />
+		<GetContacts data={id} client:load />
 	</main>
 </Layout>
