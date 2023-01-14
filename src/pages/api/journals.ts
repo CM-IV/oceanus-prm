@@ -18,7 +18,7 @@ export const post: APIRoute = async (ctx: APIContext) => {
 
         const body = await ctx.request.json();
 
-        await db.contact.create({
+        await db.journal.create({
             data: { 
                 user_id: user.userId,
                 ...body
@@ -27,7 +27,7 @@ export const post: APIRoute = async (ctx: APIContext) => {
 
         return new Response(null, {
             status: 201,
-            statusText: "Contact Created Successfully"
+            statusText: "Journal Entry Created Successfully"
         })
     } catch (error) {
         console.log(error);
@@ -48,11 +48,11 @@ export const get: APIRoute = async (ctx: APIContext) => {
             });
         }
 
-        const contacts = await db.contact.findMany();
+        const journalEntries = await db.journal.findMany();
 
-        const filteredContacts = contacts.filter((o) => o.user_id === user.userId);
+        const filteredEntries = journalEntries.filter((o) => o.user_id === user.userId).reverse();
 
-        return new Response(JSON.stringify(filteredContacts), {
+        return new Response(JSON.stringify(filteredEntries), {
             status: 200,
             statusText: "Fetched Successfully"
         })

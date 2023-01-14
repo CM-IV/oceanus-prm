@@ -1,23 +1,21 @@
 import { useEffect, useState } from "preact/hooks";
 import Fuse from "fuse.js";
 
-const GetContacts = ({ data }: any) => {
+const GetContacts = () => {
     const [contactData, setContactData] = useState<Contact[]>([]);
     const [searchData, setSearchData] = useState<Contact[]>([]);
     const [isLoading, setIsLoading] = useState<boolean>(true);
     
     const fetchContacts = async () => {
         try {
-            const allContacts = await fetch(`/api/contacts`, {
+            const res = await fetch(`/api/contacts`, {
                 method: "GET",
                 headers: {
                   "Content-Type": "application/json",
                 },
             });
 
-            const contacts = await allContacts.json();
-
-            const filteredContacts = contacts.filter((c: Contact) => c.user_id === data);
+            const filteredContacts = await res.json();
 
             setContactData(filteredContacts);
             setSearchData(filteredContacts);

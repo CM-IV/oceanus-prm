@@ -26,7 +26,19 @@ CREATE TABLE "contact" (
     "email" TEXT,
     "notes" TEXT,
     "thumbnail" TEXT,
+    "created_at" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updated_at" DATETIME NOT NULL,
     CONSTRAINT "contact_user_id_fkey" FOREIGN KEY ("user_id") REFERENCES "user" ("id") ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+-- CreateTable
+CREATE TABLE "journal" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "user_id" TEXT NOT NULL,
+    "title" TEXT,
+    "date" TEXT NOT NULL,
+    "entry" TEXT NOT NULL,
+    CONSTRAINT "journal_user_id_fkey" FOREIGN KEY ("user_id") REFERENCES "user" ("id") ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 -- CreateIndex
@@ -43,3 +55,6 @@ CREATE INDEX "session_user_id_idx" ON "session"("user_id");
 
 -- CreateIndex
 CREATE INDEX "contact_user_id_idx" ON "contact"("user_id");
+
+-- CreateIndex
+CREATE INDEX "journal_user_id_idx" ON "journal"("user_id");

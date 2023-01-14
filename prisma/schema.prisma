@@ -18,16 +18,17 @@ model User {
   hashed_password String?
   session         Session[]
   contacts        Contact[]
+  journals        Journal[]
 
   @@map("user")
 }
 
 model Session {
-  id           String @id @unique
-  user_id      String
-  expires      BigInt
-  idle_expires BigInt
-  user         User   @relation(references: [id], fields: [user_id], onDelete: Cascade)
+  id              String    @id @unique
+  user_id         String
+  expires         BigInt
+  idle_expires    BigInt
+  user            User      @relation(references: [id], fields: [user_id], onDelete: Cascade)
 
   @@index([user_id])
   @@map("session")
@@ -43,8 +44,22 @@ model Contact {
   email           String?
   notes           String?
   thumbnail       String?
+  created_at      DateTime  @default(now())
+  updated_at      DateTime  @updatedAt
   user            User      @relation(references: [id], fields: [user_id], onDelete: Cascade)
 
   @@index([user_id])
   @@map("contact")
+}
+
+model Journal {
+  id              Int       @id @default(autoincrement())
+  user_id         String
+  title           String?
+  date            String
+  entry           String
+  user            User      @relation(references: [id], fields: [user_id], onDelete: Cascade)
+
+  @@index([user_id])
+  @@map("journal")
 }

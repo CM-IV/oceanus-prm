@@ -7,7 +7,17 @@ type Contact = {
   	phone?: string;
   	email?: string;  
   	notes?: string;
-	thumbnail?: string; 
+	thumbnail?: string;
+	created_at: Date;
+	updated_at: Date;
+}
+
+type Journal = {
+	id: number;
+	user_id: string;
+	title?: string;
+	date: string;
+	entry: string;
 }
 
 declare namespace Lucia {

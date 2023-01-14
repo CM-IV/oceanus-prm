@@ -52,37 +52,6 @@ const ShowContact = ({ data }: any) => {
                         </div>
                     </div>
                     <div class="columns is-centered">
-                        <div class="column">
-                            <article class="panel is-link">
-                                <p class="panel-heading">
-                                    Latest Journal Entries
-                                </p>
-                                <a class="panel-block">
-                                    <span class="panel-icon">
-                                    <i class="fa fa-file-text" aria-hidden="true"></i>
-                                    </span>
-                                    bulma
-                                </a>
-                                <a class="panel-block">
-                                    <span class="panel-icon">
-                                    <i class="fa fa-file-text" aria-hidden="true"></i>
-                                    </span>
-                                    marksheet
-                                </a>
-                                <a class="panel-block">
-                                    <span class="panel-icon">
-                                    <i class="fa fa-file-text" aria-hidden="true"></i>
-                                    </span>
-                                    minireset.css
-                                </a>
-                                <a class="panel-block">
-                                    <span class="panel-icon">
-                                    <i class="fa fa-file-text" aria-hidden="true"></i>
-                                    </span>
-                                    jgthms.github.io
-                                </a>
-                            </article>
-                        </div>
                         <div class="column is-three-quarters">
                             <div class="box">
                                 <div class="content">
@@ -105,7 +74,6 @@ const ShowContact = ({ data }: any) => {
                                 </div>
                             </div>
                         </div>
-                        
                     </div>
                 </>
             ) : (

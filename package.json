@@ -10,7 +10,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "prod": "HOST=0.0.0.0 PORT=5082 node ./dist/server/entry.mjs"
+    "prod": "HOST=0.0.0.0 PORT=5081 node ./dist/server/entry.mjs"
   },
   "dependencies": {
     "@astrojs/node": "^4.0.0",

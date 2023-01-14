@@ -1,0 +1,12 @@
+---
+import { EditJournal } from "@src/components/preact/editJournal";
+import Layout from "@src/layouts/Layout.astro";
+
+const id = Astro.params.id;
+---
+
+<Layout title="Oceanus PRM">
+	<main>
+		<EditJournal data={id} client:load />
+	</main>
+</Layout>

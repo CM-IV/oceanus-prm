@@ -88,7 +88,7 @@ const AddContacts = () => {
                                     <input
                                     onChange={(e) => setPhone(e.currentTarget.value)}
                                     class="input"
-                                    type="text"
+                                    type="tel"
                                     defaultValue={""}
                                     
                                     />
