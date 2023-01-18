@@ -2,7 +2,7 @@
 
 Made with Server Side Rendering and Preactjs on the client side.
 
-![image](https://user-images.githubusercontent.com/44551614/212438463-27ed3a49-30ef-40e6-ae30-4f0d308368f0.png)
+![image](https://user-images.githubusercontent.com/44551614/213294951-4d137439-de82-4c06-9874-eefeaead4d03.png)
 
 
 ## 🚀 Project Structure
