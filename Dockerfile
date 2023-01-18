@@ -4,7 +4,7 @@ FROM node:18-slim as builder
 
 WORKDIR /app
 
-LABEL name=fast-dash
+LABEL name=oceanus-prm
 LABEL intermediate=true
 
 COPY package.json .
@@ -27,7 +27,7 @@ FROM node:alpine
 
 WORKDIR /app
 
-LABEL name=fast-dash
+LABEL name=oceanus-prm
 
 COPY --from=builder /app/package.json .
 COPY --from=builder /app/astro.config.mjs .

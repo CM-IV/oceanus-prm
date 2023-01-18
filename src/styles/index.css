@@ -6,6 +6,12 @@ body {
   height: 100vh;
 }
 
+#svg1 {
+  width: 200px;
+  height: 200px;
+  margin: 25px;
+}
+
 @media only screen and (min-width: 600px) {
   #loginNotify {
     position: absolute;

@@ -3,16 +3,16 @@ services:
   client:
     environment:
       - NODE_ENV=production
-      - PORT=5080
+      - PORT=5081
       - DATABASE_URL=file:../db/data.sqlite
-    image: solonsscale/fast-dash:latest #Change this
+    image: solonsscale/oceanus-prm
     working_dir: /app
     stdin_open: true
     ports:
-      - "5080:5080"
+      - "5081:5081"
     restart: unless-stopped
     volumes:
       - prm_data:/app
 
 volumes:
-  data:
+  prm_data:
