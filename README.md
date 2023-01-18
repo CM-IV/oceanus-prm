@@ -1,4 +1,4 @@
-# Welcome to Oceanus Personal Relationship Manager (WIP)!
+# Welcome to Oceanus Personal Relationship Manager!
 
 Made with Server Side Rendering and Preactjs on the client side.
 
