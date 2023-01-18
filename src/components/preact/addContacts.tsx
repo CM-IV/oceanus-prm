@@ -6,6 +6,7 @@ const AddContacts = () => {
     const [workplace, setWorkplace] = useState<string>("");
     const [phone, setPhone] = useState<string>("");
     const [email, setEmail] = useState<string>("");
+    const [introduction, setIntroduction] = useState<string>("");
     const [notes, setNotes] = useState<string>("");
     const [thumbnail, setThumbnail] = useState<string>("");
 
@@ -24,6 +25,7 @@ const AddContacts = () => {
                     workplace,
                     phone,
                     email,
+                    introduction,
                     notes,
                     thumbnail
                 })
@@ -104,6 +106,18 @@ const AddContacts = () => {
                                     defaultValue={""}
                                     
                                     />
+                                </div>
+                            </div>
+                            <div class="field">
+                            <label class="label">Introduction</label>
+                                <div class="control">
+                                    <textarea
+                                     class="textarea has-fixed-size"
+                                     placeholder={"How you met this person"}
+                                     defaultValue={""}
+                                     onChange={(e) => setIntroduction(e.currentTarget.value)}
+                                     rows={5}
+                                    ></textarea>
                                 </div>
                             </div>
                             <div class="field">

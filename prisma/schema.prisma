@@ -38,6 +38,7 @@ model Contact {
   id              String    @id @default(cuid())
   user_id         String
   name            String
+  introduction    String?
   date_of_birth   String?
   workplace       String?
   phone           String?

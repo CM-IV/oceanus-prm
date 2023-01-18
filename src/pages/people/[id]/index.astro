@@ -1,6 +1,15 @@
 ---
 import { ShowContact } from "@src/components/preact/showContact";
 import Layout from "@src/layouts/Layout.astro";
+import { auth } from "@prisma/init";
+import { AuthRequest } from "@lucia-auth/astro";
+
+const authRequest = new AuthRequest(auth, Astro);
+const { user } = await authRequest.validateUser();
+
+if (!user) {
+	return Astro.redirect("/login", 302);
+}
 
 const id = Astro.params.id;
 ---

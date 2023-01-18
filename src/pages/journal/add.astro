@@ -1,8 +1,8 @@
 ---
 import Layout from "@src/layouts/Layout.astro";
+import { AddJournals } from "@src/components/preact/addJournals";
 import { auth } from "@prisma/init";
 import { AuthRequest } from "@lucia-auth/astro";
-import { AddJournals } from "@src/components/preact/addJournals";
 
 const authRequest = new AuthRequest(auth, Astro);
 const { user } = await authRequest.validateUser();

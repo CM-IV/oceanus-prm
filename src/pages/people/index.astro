@@ -1,8 +1,8 @@
 ---
 import Layout from '@layouts/Layout.astro';
+import { GetContacts } from '@src/components/preact/getContacts';
 import { auth } from "@prisma/init";
 import { AuthRequest } from "@lucia-auth/astro";
-import { GetContacts } from '@src/components/preact/getContacts';
 
 const authRequest = new AuthRequest(auth, Astro);
 const { user } = await authRequest.validateUser();
@@ -10,13 +10,10 @@ const { user } = await authRequest.validateUser();
 if (!user) {
 	return Astro.redirect("/login", 302);
 }
-
-const id = user.userId;
-
 ---
 
 <Layout title="Oceanus PRM">
 	<main>
-		<GetContacts client:load />
+		<GetContacts client:visible />
 	</main>
 </Layout>

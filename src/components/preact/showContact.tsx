@@ -68,6 +68,10 @@ const ShowContact = ({ data }: any) => {
                                         <p>{contact?.phone}</p>
                                     </div>
                                     <div class="field">
+                                        <label class="label">Introduction</label>
+                                        <textarea class="textarea has-fixed-size" rows={5} placeholder="How you met this contact"  readonly>{contact?.introduction}</textarea>
+                                    </div>
+                                    <div class="field">
                                         <label class="label">Notes</label>
                                         <textarea class="textarea has-fixed-size" rows={10} placeholder="Notes go here..."  readonly>{contact?.notes}</textarea>
                                     </div>

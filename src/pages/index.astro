@@ -1,8 +1,8 @@
 ---
 import Layout from '@layouts/Layout.astro';
+import Home from '@src/components/homeComponent.astro';
 import { auth } from "@prisma/init";
 import { AuthRequest } from "@lucia-auth/astro";
-import Dashboard from '@src/components/dashComponent.astro';
 
 const authRequest = new AuthRequest(auth, Astro);
 const { user } = await authRequest.validateUser();
@@ -10,11 +10,9 @@ const { user } = await authRequest.validateUser();
 if (!user) {
 	return Astro.redirect("/login", 302);
 }
-
 ---
-
 <Layout title="Oceanus PRM">
 	<main>
-		<Dashboard />
+		<Home />
 	</main>
 </Layout>

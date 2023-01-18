@@ -1,8 +1,8 @@
 ---
 import Layout from '@layouts/Layout.astro';
+import { GetJournals } from '@src/components/preact/getJournals';
 import { auth } from "@prisma/init";
 import { AuthRequest } from "@lucia-auth/astro";
-import { GetJournals } from '@src/components/preact/getJournals';
 
 const authRequest = new AuthRequest(auth, Astro);
 const { user } = await authRequest.validateUser();
@@ -10,11 +10,10 @@ const { user } = await authRequest.validateUser();
 if (!user) {
 	return Astro.redirect("/login", 302);
 }
-
 ---
 
 <Layout title="Oceanus PRM">
 	<main>
-		<GetJournals client:load />
+		<GetJournals client:visible />
 	</main>
 </Layout>

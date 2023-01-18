@@ -20,6 +20,7 @@ CREATE TABLE "contact" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "user_id" TEXT NOT NULL,
     "name" TEXT NOT NULL,
+    "introduction" TEXT,
     "date_of_birth" TEXT,
     "workplace" TEXT,
     "phone" TEXT,
