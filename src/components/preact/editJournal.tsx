@@ -99,9 +99,8 @@ const EditJournal = ({ data }: any) => {
               <div class="control">
                 <input
                   value={date}
-                  onChange={(e) => setDate(e.currentTarget.value)}
                   class="input"
-                  type="date"
+                  readOnly
                 />
               </div>
             </div>

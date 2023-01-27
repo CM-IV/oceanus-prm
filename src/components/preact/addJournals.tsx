@@ -16,7 +16,7 @@ const AddJournals = () => {
                 },
                 body: JSON.stringify({
                     title,
-                    date,
+                    date: new Date().toLocaleDateString(),
                     entry
                 })
             });
@@ -45,7 +45,6 @@ const AddJournals = () => {
                                     onChange={(e) => setTitle(e.currentTarget.value)}
                                     class="input"
                                     type="text"
-                                    defaultValue={""}
                                     required
                                     />
                                 </div>
@@ -55,8 +54,9 @@ const AddJournals = () => {
                                 <div class="control">
                                     <input
                                     onChange={(e) => setDate(e.currentTarget.value)}
+                                    value={new Date().toLocaleDateString()}
                                     class="input"
-                                    type="date"
+                                    readOnly
                                     />
                                 </div>
                             </div>
@@ -65,7 +65,6 @@ const AddJournals = () => {
                                 <div class="control">
                                     <textarea
                                      class="textarea has-fixed-size"
-                                     defaultValue={""}
                                      onChange={(e) => setEntry(e.currentTarget.value)}
                                      rows={10}
                                     ></textarea>

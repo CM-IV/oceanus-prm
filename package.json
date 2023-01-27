@@ -13,20 +13,20 @@
     "prod": "HOST=0.0.0.0 PORT=5081 node ./dist/server/entry.mjs"
   },
   "dependencies": {
-    "@astrojs/node": "^4.0.0",
-    "@astrojs/preact": "^1.2.0",
-    "@lucia-auth/adapter-prisma": "^0.1.4",
+    "@astrojs/node": "^5.0.0",
+    "@astrojs/preact": "^2.0.0",
+    "@lucia-auth/adapter-prisma": "^0.2.2",
     "@lucia-auth/astro": "^0.4.0",
-    "@prisma/client": "^4.8.0",
-    "astro": "^1.9.2",
+    "@prisma/client": "^4.9.0",
+    "astro": "^2.0.1",
     "fuse.js": "^6.6.2",
-    "lucia-auth": "^0.3.4",
+    "lucia-auth": "^0.4.3",
     "preact": "^10.11.3",
     "zod": "^3.20.2"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^5.0.0",
     "postcss": "^8.4.20",
-    "prisma": "^4.8.0"
+    "prisma": "^4.9.0"
   }
 }

@@ -7,6 +7,7 @@ const EditContact = ({ data }: any) => {
     const [phone, setPhone] = useState<string>("");
     const [email, setEmail] = useState<string>("");
     const [notes, setNotes] = useState<string>("");
+    const [introduction, setIntroduction] = useState<string>("");
     const [thumbnail, setThumbnail] = useState<string>("");
     const [isLoading, setIsLoading] = useState<boolean>(true);
 
@@ -27,6 +28,7 @@ const EditContact = ({ data }: any) => {
       setWorkplace(contact?.workplace);
       setPhone(contact?.phone);
       setEmail(contact?.email);
+      setIntroduction(contact?.introduction);
       setNotes(contact?.notes);
       setThumbnail(contact?.thumbnail);
     } catch (error) {
@@ -55,6 +57,7 @@ const EditContact = ({ data }: any) => {
             workplace,
             phone,
             email,
+            introduction,
             notes,
             thumbnail
         })
@@ -106,6 +109,17 @@ const EditContact = ({ data }: any) => {
               </div>
             </div>
             <div class="field">
+              <label class="label">Date of Birth</label>
+              <div class="control">
+                <input
+                  value={date_of_birth}
+                  onChange={(e) => setDOB(e.currentTarget.value)}
+                  class="input"
+                  type="text"
+                />
+              </div>
+            </div>
+            <div class="field">
               <label class="label">Workplace</label>
               <div class="control">
                 <input
@@ -135,6 +149,17 @@ const EditContact = ({ data }: any) => {
                   onChange={(e) => setEmail(e.currentTarget.value)}
                   class="input"
                   type="text"
+                />
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Introduction</label>
+              <div class="control">
+                <textarea
+                  value={introduction}
+                  onChange={(e) => setIntroduction(e.currentTarget.value)}
+                  class="textarea has-fixed-size"
+                  rows={5}
                 />
               </div>
             </div>

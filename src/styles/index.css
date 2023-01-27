@@ -12,6 +12,14 @@ body {
   margin: 25px;
 }
 
+
+#greet-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+}
+
 @media only screen and (min-width: 600px) {
   #loginNotify {
     position: absolute;

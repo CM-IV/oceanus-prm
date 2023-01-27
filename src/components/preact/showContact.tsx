@@ -56,25 +56,39 @@ const ShowContact = ({ data }: any) => {
                             <div class="box">
                                 <div class="content">
                                     <div class="field">
+                                    <label class="label">Name</label>
+                                        <p>{contact?.name}</p>
+                                    </div>
+                                    {contact?.date_of_birth ? (
+                                        <div class="field">
                                         <label class="label">Date of Birth</label>
-                                        <p>{contact?.date_of_birth}</p>
-                                    </div>
-                                    <div class="field">
+                                            <p>{contact?.date_of_birth}</p>
+                                        </div>
+                                    ) : (null)}
+                                    {contact?.workplace ? (
+                                        <div class="field">
                                         <label class="label">Workplace</label>
-                                        <p>{contact?.workplace}</p>
-                                    </div>
-                                    <div class="field">
+                                            <p>{contact?.workplace}</p>
+                                        </div>
+                                    ) : (null)}
+                                    {contact?.phone ? (
+                                        <div class="field">
                                         <label class="label">Phone</label>
-                                        <p>{contact?.phone}</p>
-                                    </div>
-                                    <div class="field">
+                                            <p>{contact?.phone}</p>
+                                        </div>
+                                    ) : (null)}
+                                    {contact?.introduction ? (
+                                        <div class="field">
                                         <label class="label">Introduction</label>
-                                        <textarea class="textarea has-fixed-size" rows={5} placeholder="How you met this contact"  readonly>{contact?.introduction}</textarea>
-                                    </div>
-                                    <div class="field">
+                                            <textarea class="textarea has-fixed-size" rows={5} placeholder="How you met this contact"  readonly>{contact?.introduction}</textarea>
+                                        </div>
+                                    ) : (null)}
+                                    {contact?.notes ? (
+                                        <div class="field">
                                         <label class="label">Notes</label>
-                                        <textarea class="textarea has-fixed-size" rows={10} placeholder="Notes go here..."  readonly>{contact?.notes}</textarea>
-                                    </div>
+                                            <textarea class="textarea has-fixed-size" rows={10} placeholder="Notes go here..."  readonly>{contact?.notes}</textarea>
+                                        </div>
+                                    ) : (null)}
                                 </div>
                             </div>
                         </div>

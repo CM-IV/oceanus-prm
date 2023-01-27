@@ -55,7 +55,6 @@ const AddContacts = () => {
                                     onChange={(e) => setName(e.currentTarget.value)}
                                     class="input"
                                     type="text"
-                                    defaultValue={""}
                                     required
                                     />
                                 </div>
@@ -66,9 +65,7 @@ const AddContacts = () => {
                                     <input
                                     onChange={(e) => setDOB(e.currentTarget.value)}
                                     class="input"
-                                    type="text"
-                                    defaultValue={""}
-                                    
+                                    type="text"                                    
                                     />
                                 </div>
                             </div>
@@ -78,9 +75,7 @@ const AddContacts = () => {
                                     <input
                                     onChange={(e) => setWorkplace(e.currentTarget.value)}
                                     class="input"
-                                    type="text"
-                                    defaultValue={""}
-                                    
+                                    type="text"                                    
                                     />
                                 </div>
                             </div>
@@ -90,9 +85,7 @@ const AddContacts = () => {
                                     <input
                                     onChange={(e) => setPhone(e.currentTarget.value)}
                                     class="input"
-                                    type="tel"
-                                    defaultValue={""}
-                                    
+                                    type="tel"                                    
                                     />
                                 </div>
                             </div>
@@ -102,9 +95,7 @@ const AddContacts = () => {
                                     <input
                                     onChange={(e) => setEmail(e.currentTarget.value)}
                                     class="input"
-                                    type="email"
-                                    defaultValue={""}
-                                    
+                                    type="email"                                    
                                     />
                                 </div>
                             </div>
@@ -114,7 +105,6 @@ const AddContacts = () => {
                                     <textarea
                                      class="textarea has-fixed-size"
                                      placeholder={"How you met this person"}
-                                     defaultValue={""}
                                      onChange={(e) => setIntroduction(e.currentTarget.value)}
                                      rows={5}
                                     ></textarea>
@@ -125,7 +115,6 @@ const AddContacts = () => {
                                 <div class="control">
                                     <textarea
                                      class="textarea has-fixed-size"
-                                     defaultValue={""}
                                      onChange={(e) => setNotes(e.currentTarget.value)}
                                      rows={10}
                                     ></textarea>
@@ -138,8 +127,6 @@ const AddContacts = () => {
                                     onChange={(e) => setThumbnail(e.currentTarget.value)}
                                     class="input"
                                     type="url"
-                                    defaultValue={""}
-
                                     />
                                 </div>
                             </div>
