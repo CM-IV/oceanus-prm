@@ -15,6 +15,15 @@ if (session) {
 
 //Handle login form
 if (Astro.request.method === "POST") {
+    // csrf check
+	const requestOrigin = Astro.request.headers.get("origin");
+	const isValidRequest = !!requestOrigin && requestOrigin === Astro.url.origin;
+	if (!isValidRequest) {
+		return new Response(null, {
+			status: 403
+		});
+	}
+
     try {
         const form = Object.fromEntries(await Astro.request.formData());
         const result = await handleAuthLogin(form);
@@ -23,9 +32,12 @@ if (Astro.request.method === "POST") {
             throw new Error();
         }
 
-        const user = await auth.authenticateUser("username", result.data.username, result.data.password);
-
-        const session = await auth.createSession(user.userId);
+        const key = await auth.validateKeyPassword(
+				"username",
+				result.data.username,
+				result.data.password
+			);
+			const session = await auth.createSession(key.userId);
         
         authRequest.setSession(session);
 

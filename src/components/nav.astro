@@ -1,7 +1,3 @@
----
-import { Signout } from "./preact/signout";
----
-
 <nav class="navbar mb-4" id="nav" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="image is-48x48 mt-1" href="/">
@@ -31,7 +27,9 @@ import { Signout } from "./preact/signout";
       </div>
       <div class="navbar-end">
         <div class="navbar-item">
-          <Signout client:load />
+          <form action="/api/logout" method="post">
+            <input class="button is-danger" type="submit" value="Sign out" />
+          </form>
         </div>
       </div>
     </div>

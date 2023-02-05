@@ -10,30 +10,42 @@ const authRequest = new AuthRequest(auth, Astro);
 //Check if user already has a valid session
 const session = await authRequest.validate();
 if (session) {
-    return Astro.redirect("/", 302)
+    return Astro.redirect("/", 302);
 }
 
 //Handle signup form
 if (Astro.request.method === "POST") {
-    try {
+    // csrf check
+	const requestOrigin = Astro.request.headers.get("origin");
+	const isValidRequest = !!requestOrigin && requestOrigin === Astro.url.origin;
+	if (!isValidRequest) {
+		return new Response(null, {
+			status: 403
+		});
+	}
 
+    try {
         const form = Object.fromEntries(await Astro.request.formData());
         const result = await handleAuthRegister(form);
 
         if (!result.success) {
-            Astro.response.headers.set("error", result.error.formErrors.fieldErrors.confirmPassword![0])
+            Astro.response.headers.set("error", result.error.toString());
             throw new Error();
         }
 
         const username = result.data.username as string;
         const password = result.data.password as string;
 
-        const user = await auth.createUser("username", username, {
-            password,
-            attributes: {
-                username
-            }
-        });
+        const user = await auth.createUser({
+				key: {
+					providerId: "username",
+					providerUserId: username,
+					password
+				},
+				attributes: {
+					username
+				}
+			});
 
         const session = await auth.createSession(user.userId);
         
@@ -42,6 +54,7 @@ if (Astro.request.method === "POST") {
         return Astro.redirect("/", 302);
 
     } catch (error) {
+        console.log(error);
         Astro.response.status = 400;
     }
 }

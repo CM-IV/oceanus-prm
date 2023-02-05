@@ -12,10 +12,6 @@ export const auth = lucia({
 			userId: userData.id,
 			username: userData.username		
 		};
-	},
-	sessionTimeout: {
-		activePeriod: 7200000,
-		idlePeriod: 3600000
 	}
 });
 
