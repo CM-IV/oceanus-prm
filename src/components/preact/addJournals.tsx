@@ -42,7 +42,7 @@ const AddJournals = () => {
                             <label class="label">Title (optional)</label>
                                 <div class="control">
                                     <input
-                                    onChange={(e) => setTitle(e.currentTarget.value)}
+                                    onInput={(e) => setTitle(e.currentTarget.value)}
                                     class="input"
                                     type="text"
                                     required
@@ -53,7 +53,7 @@ const AddJournals = () => {
                             <label class="label">Date</label>
                                 <div class="control">
                                     <input
-                                    onChange={(e) => setDate(e.currentTarget.value)}
+                                    onInput={(e) => setDate(e.currentTarget.value)}
                                     value={new Date().toLocaleDateString()}
                                     class="input"
                                     readOnly
@@ -65,7 +65,7 @@ const AddJournals = () => {
                                 <div class="control">
                                     <textarea
                                      class="textarea has-fixed-size"
-                                     onChange={(e) => setEntry(e.currentTarget.value)}
+                                     onInput={(e) => setEntry(e.currentTarget.value)}
                                      rows={10}
                                     ></textarea>
                                 </div>

@@ -52,7 +52,7 @@ const AddContacts = () => {
                             <label class="label">Name</label>
                                 <div class="control">
                                     <input
-                                    onChange={(e) => setName(e.currentTarget.value)}
+                                    onInput={(e) => setName(e.currentTarget.value)}
                                     class="input"
                                     type="text"
                                     required
@@ -63,7 +63,7 @@ const AddContacts = () => {
                             <label class="label">Date of Birth</label>
                                 <div class="control">
                                     <input
-                                    onChange={(e) => setDOB(e.currentTarget.value)}
+                                    onInput={(e) => setDOB(e.currentTarget.value)}
                                     class="input"
                                     type="text"                                    
                                     />
@@ -73,7 +73,7 @@ const AddContacts = () => {
                             <label class="label">Workplace</label>
                                 <div class="control">
                                     <input
-                                    onChange={(e) => setWorkplace(e.currentTarget.value)}
+                                    onInput={(e) => setWorkplace(e.currentTarget.value)}
                                     class="input"
                                     type="text"                                    
                                     />
@@ -83,7 +83,7 @@ const AddContacts = () => {
                             <label class="label">Phone Number</label>
                                 <div class="control">
                                     <input
-                                    onChange={(e) => setPhone(e.currentTarget.value)}
+                                    onInput={(e) => setPhone(e.currentTarget.value)}
                                     class="input"
                                     type="tel"                                    
                                     />
@@ -93,7 +93,7 @@ const AddContacts = () => {
                             <label class="label">Email</label>
                                 <div class="control">
                                     <input
-                                    onChange={(e) => setEmail(e.currentTarget.value)}
+                                    onInput={(e) => setEmail(e.currentTarget.value)}
                                     class="input"
                                     type="email"                                    
                                     />
@@ -105,7 +105,7 @@ const AddContacts = () => {
                                     <textarea
                                      class="textarea has-fixed-size"
                                      placeholder={"How you met this person"}
-                                     onChange={(e) => setIntroduction(e.currentTarget.value)}
+                                     onInput={(e) => setIntroduction(e.currentTarget.value)}
                                      rows={5}
                                     ></textarea>
                                 </div>
@@ -115,7 +115,7 @@ const AddContacts = () => {
                                 <div class="control">
                                     <textarea
                                      class="textarea has-fixed-size"
-                                     onChange={(e) => setNotes(e.currentTarget.value)}
+                                     onInput={(e) => setNotes(e.currentTarget.value)}
                                      rows={10}
                                     ></textarea>
                                 </div>
@@ -124,7 +124,7 @@ const AddContacts = () => {
                             <label class="label">Thumbnail</label>
                                 <div class="control">
                                     <input
-                                    onChange={(e) => setThumbnail(e.currentTarget.value)}
+                                    onInput={(e) => setThumbnail(e.currentTarget.value)}
                                     class="input"
                                     type="url"
                                     />

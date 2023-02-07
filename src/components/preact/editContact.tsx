@@ -102,7 +102,7 @@ const EditContact = ({ data }: any) => {
               <div class="control">
                 <input
                   value={name}
-                  onChange={(e) => setName(e.currentTarget.value)}
+                  onInput={(e) => setName(e.currentTarget.value)}
                   class="input"
                   type="text"
                 />
@@ -113,7 +113,7 @@ const EditContact = ({ data }: any) => {
               <div class="control">
                 <input
                   value={date_of_birth}
-                  onChange={(e) => setDOB(e.currentTarget.value)}
+                  onInput={(e) => setDOB(e.currentTarget.value)}
                   class="input"
                   type="text"
                 />
@@ -124,7 +124,7 @@ const EditContact = ({ data }: any) => {
               <div class="control">
                 <input
                   value={workplace}
-                  onChange={(e) => setWorkplace(e.currentTarget.value)}
+                  onInput={(e) => setWorkplace(e.currentTarget.value)}
                   class="input"
                   type="text"
                 />
@@ -135,7 +135,7 @@ const EditContact = ({ data }: any) => {
               <div class="control">
                 <input
                   value={phone}
-                  onChange={(e) => setPhone(e.currentTarget.value)}
+                  onInput={(e) => setPhone(e.currentTarget.value)}
                   class="input"
                   type="text"
                 />
@@ -146,7 +146,7 @@ const EditContact = ({ data }: any) => {
               <div class="control">
                 <input
                   value={email}
-                  onChange={(e) => setEmail(e.currentTarget.value)}
+                  onInput={(e) => setEmail(e.currentTarget.value)}
                   class="input"
                   type="text"
                 />
@@ -157,7 +157,7 @@ const EditContact = ({ data }: any) => {
               <div class="control">
                 <textarea
                   value={introduction}
-                  onChange={(e) => setIntroduction(e.currentTarget.value)}
+                  onInput={(e) => setIntroduction(e.currentTarget.value)}
                   class="textarea has-fixed-size"
                   rows={5}
                 />
@@ -168,7 +168,7 @@ const EditContact = ({ data }: any) => {
               <div class="control">
                 <textarea
                   value={notes}
-                  onChange={(e) => setNotes(e.currentTarget.value)}
+                  onInput={(e) => setNotes(e.currentTarget.value)}
                   class="textarea has-fixed-size"
                   rows={10}
                 />
@@ -179,7 +179,7 @@ const EditContact = ({ data }: any) => {
               <div class="control">
                 <input
                   value={thumbnail}
-                  onChange={(e) => setThumbnail(e.currentTarget.value)}
+                  onInput={(e) => setThumbnail(e.currentTarget.value)}
                   class="input"
                   type="url"
                 />

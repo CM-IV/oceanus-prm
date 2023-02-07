@@ -73,7 +73,7 @@ const GetContacts = () => {
                                             class="input is-rounded"
                                             type="text"
                                             placeholder="Search"
-                                            onChange={(e) => handleSearch(e.currentTarget.value)}
+                                            onInput={(e) => handleSearch(e.currentTarget.value)}
                                         />
                                         <span class="icon is-small is-left">
                                             <i class="fa fa-search" aria-hidden="true"></i>

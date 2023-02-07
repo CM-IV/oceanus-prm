@@ -88,7 +88,7 @@ const EditJournal = ({ data }: any) => {
               <div class="control">
                 <input
                   value={title}
-                  onChange={(e) => setTitle(e.currentTarget.value)}
+                  onInput={(e) => setTitle(e.currentTarget.value)}
                   class="input"
                   type="text"
                 />
@@ -109,7 +109,7 @@ const EditJournal = ({ data }: any) => {
               <div class="control">
                 <textarea
                   value={entry}
-                  onChange={(e) => setEntry(e.currentTarget.value)}
+                  onInput={(e) => setEntry(e.currentTarget.value)}
                   class="textarea has-fixed-size"
                   rows={10}
                 />
