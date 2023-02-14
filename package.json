@@ -14,19 +14,19 @@
   },
   "dependencies": {
     "@astrojs/node": "^5.0.3",
-    "@astrojs/preact": "^2.0.2",
+    "@astrojs/preact": "^2.0.3",
     "@lucia-auth/adapter-prisma": "^0.4.0",
     "@lucia-auth/astro": "^0.5.1",
-    "@prisma/client": "^4.9.0",
-    "astro": "^2.0.9",
+    "@prisma/client": "^4.10.1",
+    "astro": "^2.0.11",
     "fuse.js": "^6.6.2",
     "lucia-auth": "^0.6.0",
-    "preact": "^10.12.0",
+    "preact": "^10.12.1",
     "zod": "^3.20.2"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^5.0.0",
     "postcss": "^8.4.20",
-    "prisma": "^4.9.0"
+    "prisma": "^4.10.1"
   }
 }
