@@ -7,7 +7,7 @@ specifiers:
   '@lucia-auth/adapter-prisma': ^0.4.0
   '@lucia-auth/astro': ^0.5.1
   '@prisma/client': ^4.10.1
-  astro: ^2.0.12
+  astro: ^2.0.14
   fuse.js: ^6.6.2
   lucia-auth: ^0.6.0
   postcss: ^8.4.20
@@ -16,12 +16,12 @@ specifiers:
   zod: ^3.20.2
 
 dependencies:
-  '@astrojs/node': 5.0.3_astro@2.0.12
+  '@astrojs/node': 5.0.3_astro@2.0.14
   '@astrojs/preact': 2.0.3_preact@10.12.1
   '@lucia-auth/adapter-prisma': 0.4.0_lucia-auth@0.6.0
   '@lucia-auth/astro': 0.5.1_lucia-auth@0.6.0
   '@prisma/client': 4.10.1_prisma@4.10.1
-  astro: 2.0.12
+  astro: 2.0.14
   fuse.js: 6.6.2
   lucia-auth: 0.6.0
   preact: 10.12.1
@@ -68,13 +68,13 @@ packages:
       vscode-uri: 3.0.7
     dev: false
 
-  /@astrojs/markdown-remark/2.0.1_astro@2.0.12:
+  /@astrojs/markdown-remark/2.0.1_astro@2.0.14:
     resolution: {integrity: sha512-xQF1rXGJN18m+zZucwRRtmNehuhPMMhZhi6HWKrtpEAKnHSPk8lqf1GXgKH7/Sypglu8ivdECZ+EGs6kOYVasQ==}
     peerDependencies:
       astro: ^2.0.2
     dependencies:
       '@astrojs/prism': 2.0.0
-      astro: 2.0.12
+      astro: 2.0.14
       github-slugger: 1.5.0
       import-meta-resolve: 2.2.1
       rehype-raw: 6.1.1
@@ -91,13 +91,13 @@ packages:
       - supports-color
     dev: false
 
-  /@astrojs/node/5.0.3_astro@2.0.12:
+  /@astrojs/node/5.0.3_astro@2.0.14:
     resolution: {integrity: sha512-zjyTE7ZWkwmJGbg1r7lOQJqRREqDV+yu2Qb4VTiJ8zek9ts4JD3syKRXXJxf9W2lhtIOMbukDmupIa+0Hkxq/w==}
     peerDependencies:
       astro: ^2.0.6
     dependencies:
       '@astrojs/webapi': 2.0.0
-      astro: 2.0.12
+      astro: 2.0.14
       send: 0.18.0
       server-destroy: 1.0.1
     transitivePeerDependencies:
@@ -145,6 +145,12 @@ packages:
 
   /@astrojs/webapi/2.0.0:
     resolution: {integrity: sha512-gziwy+XvY+/B9mq/eurgJMZ4iFnkcqg1wb0tA8BsVfiUPwl7yQKAFrBxrs2rWfKMXyWlVaTFc8rAYcB5VXQEuw==}
+    dependencies:
+      undici: 5.18.0
+    dev: false
+
+  /@astrojs/webapi/2.0.1:
+    resolution: {integrity: sha512-aOOHa86W5Ux77A3dS91YrVlSxtBSJsVK4UhvcXHY0gAl0ZrOStSKSBO45gZ6tFi2AiHu3bzpMtZjwrPHtl+cyg==}
     dependencies:
       undici: 5.18.0
     dev: false
@@ -878,16 +884,16 @@ packages:
     resolution: {integrity: sha512-I1jXZMjAgCMmxT4qxXfPXa6SthSoE8h6gkSI9BGGNv8mP8G/v0blc+qFnZu6K42vTOiuME596QaLO0TP3Lk0xg==}
     dev: false
 
-  /astro/2.0.12:
-    resolution: {integrity: sha512-qtAqPSfvUuA94Lt38ErB+pe1JrPzMsdxhLLxmbMA44JLriFAjkKA60mZf+woaYxe9l8Gc0KQ0oKa4rE4ucrA8A==}
+  /astro/2.0.14:
+    resolution: {integrity: sha512-BiXnHyK3rj5Uz45V5p9jRi0xtJc/zxhCxnXYAekHHF1bVvvoa3aXMwl0GZ3Bc0mxP6vPLmbRcjNKdqfyZn1B3Q==}
     engines: {node: '>=16.12.0', npm: '>=6.14.0'}
     hasBin: true
     dependencies:
       '@astrojs/compiler': 1.1.0
       '@astrojs/language-server': 0.28.3
-      '@astrojs/markdown-remark': 2.0.1_astro@2.0.12
+      '@astrojs/markdown-remark': 2.0.1_astro@2.0.14
       '@astrojs/telemetry': 2.0.0
-      '@astrojs/webapi': 2.0.0
+      '@astrojs/webapi': 2.0.1
       '@babel/core': 7.20.12
       '@babel/generator': 7.20.14
       '@babel/parser': 7.20.15
@@ -931,8 +937,8 @@ packages:
       typescript: 4.9.5
       unist-util-visit: 4.1.2
       vfile: 5.3.7
-      vite: 4.1.1
-      vitefu: 0.2.4_vite@4.1.1
+      vite: 4.1.2
+      vitefu: 0.2.4_vite@4.1.2
       yargs-parser: 21.1.1
       zod: 3.20.6
     transitivePeerDependencies:
@@ -3164,8 +3170,8 @@ packages:
       vfile-message: 3.1.4
     dev: false
 
-  /vite/4.1.1:
-    resolution: {integrity: sha512-LM9WWea8vsxhr782r9ntg+bhSFS06FJgCvvB0+8hf8UWtvaiDagKYWXndjfX6kGl74keHJUcpzrQliDXZlF5yg==}
+  /vite/4.1.2:
+    resolution: {integrity: sha512-MWDb9Rfy3DI8omDQySbMK93nQqStwbsQWejXRY2EBzEWKmLAXWb1mkI9Yw2IJrc+oCvPCI1Os5xSSIBYY6DEAw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
@@ -3197,7 +3203,7 @@ packages:
       fsevents: 2.3.2
     dev: false
 
-  /vitefu/0.2.4_vite@4.1.1:
+  /vitefu/0.2.4_vite@4.1.2:
     resolution: {integrity: sha512-fanAXjSaf9xXtOOeno8wZXIhgia+CZury481LsDaV++lSvcU2R9Ch2bPh3PYFyoHW+w9LqAeYRISVQjUIew14g==}
     peerDependencies:
       vite: ^3.0.0 || ^4.0.0
@@ -3205,7 +3211,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.1.1
+      vite: 4.1.2
     dev: false
 
   /vscode-css-languageservice/6.2.3:
