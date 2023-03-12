@@ -19,6 +19,7 @@ CREATE TABLE "key" (
     "hashed_password" TEXT,
     "user_id" TEXT NOT NULL,
     "primary" BOOLEAN NOT NULL,
+    "expires" BIGINT,
     CONSTRAINT "key_user_id_fkey" FOREIGN KEY ("user_id") REFERENCES "user" ("id") ON DELETE CASCADE ON UPDATE CASCADE
 );
 

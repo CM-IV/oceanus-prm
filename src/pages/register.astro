@@ -37,7 +37,7 @@ if (Astro.request.method === "POST") {
         const password = result.data.password as string;
 
         const user = await auth.createUser({
-				key: {
+				primaryKey: {
 					providerId: "username",
 					providerUserId: username,
 					password

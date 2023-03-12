@@ -32,7 +32,7 @@ if (Astro.request.method === "POST") {
             throw new Error();
         }
 
-        const key = await auth.validateKeyPassword(
+        const key = await auth.useKey(
 				"username",
 				result.data.username,
 				result.data.password

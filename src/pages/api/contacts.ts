@@ -50,7 +50,7 @@ export const get: APIRoute = async (ctx: APIContext) => {
 
         const contacts = await db.contact.findMany();
 
-        const filteredContacts = contacts.filter((o) => o.user_id === user.userId);
+        const filteredContacts = contacts.filter((o: Contact) => o.user_id === user.userId);
 
         return new Response(JSON.stringify(filteredContacts), {
             status: 200,

@@ -50,7 +50,7 @@ export const get: APIRoute = async (ctx: APIContext) => {
 
         const journalEntries = await db.journal.findMany();
 
-        const filteredEntries = journalEntries.filter((o) => o.user_id === user.userId).reverse();
+        const filteredEntries = journalEntries.filter((o: Journal) => o.user_id === user.userId).reverse();
 
         return new Response(JSON.stringify(filteredEntries), {
             status: 200,
